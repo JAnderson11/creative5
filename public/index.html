@@ -1,0 +1,19 @@
+<html>
+<head>
+  <title>Meme Database</title>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+  <script src="javascripts/app.js"></script>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body ng-app="meme" ng-controller="MainCtrl">
+  <h1>Meme Database</h1>
+  <form ng-submit="addMeme()">
+    <input type="text" ng-model="formContent"></input>
+    <button type="submit">Add Meme</button>
+  </form>
+  <div ng-repeat="meme in memes | orderBy: '-id'">
+    <span class="glyphicon glyphicon-remove" ng-click="delete(meme)"></span>
+    <img src={{meme.image}}>
+  </div>
+</body>
+</html>
