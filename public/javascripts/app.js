@@ -26,9 +26,17 @@ angular.module('meme', [])
     $scope.delete = function(meme) {
       $http.delete('/memes/' + meme._id )
         .success(function(data){
-          console.log("delete worked");
+          console.log("delete meme worked");
         });
       $scope.getAll();
     };
+
+    $scope.removeAll = function(){
+      $http.delete('/memes')
+        .success(function(data){
+          console.log("delete all worked");
+        });
+      $scope.getAll();
+    }
   }
 ]);

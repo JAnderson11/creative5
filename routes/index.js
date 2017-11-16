@@ -33,8 +33,14 @@ router.get('/memes/:meme', function(req, res) {
 });
 
 router.delete('/memes/:meme', function(req, res) {
-  console.log("in Delete");
+  console.log("in Delete meme");
   req.meme.remove();
+  res.sendStatus(200);
+});
+
+router.delete('/memes', function(req, res){
+  console.log("in Delete all");
+  Meme.find().remove();
   res.sendStatus(200);
 });
 
