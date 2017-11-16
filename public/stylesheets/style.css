@@ -1,8 +1,22 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
 a {
   color: #00B7FF;
+}
+
+img {
+  width: 100%;
+  padding: 10px;
+}
+
+.sidebar img {
+  height: 25%;
+}
+
+.sidebar {
+  height: 100%;
 }
