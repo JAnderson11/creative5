@@ -13,30 +13,33 @@ angular.module('meme', [])
       $scope.formContent = '';
     };
     $scope.getAll = function() {
-      return $http.get('/memes').success(function(data){
+      $http.get('/memes').success(function(data){
         angular.copy(data, $scope.memes);
       });
     };
     $scope.getAll();
+
     $scope.create = function(meme) {
-      return $http.post('/memes', meme).success(function(data){
+      $http.post('/memes', meme).success(function(data){
         $scope.memes.push(data);
+        $scope.getAll();
       });
     };
+
     $scope.delete = function(meme) {
       $http.delete('/memes/' + meme._id )
         .success(function(data){
           console.log("delete meme worked");
+          $scope.getAll();
         });
-      $scope.getAll();
     };
 
     $scope.removeAll = function(){
       $http.delete('/memes')
         .success(function(data){
           console.log("delete all worked");
-        });
-      $scope.getAll();
+          $scope.getAll();
+        });      
     }
   }
 ]);

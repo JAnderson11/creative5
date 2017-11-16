@@ -40,7 +40,7 @@ router.delete('/memes/:meme', function(req, res) {
 
 router.delete('/memes', function(req, res){
   console.log("in Delete all");
-  Meme.find().remove();
+  Meme.find().remove(function(){});
   res.sendStatus(200);
 });
 
