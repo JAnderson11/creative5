@@ -7,7 +7,7 @@
   <link href="stylesheets/style.css" rel="stylesheet">
 </head>
 
-<body>
+<body ng-app="meme" ng-controller="MainCtrl">
   <div class="jumbotron text-center">
     <h1>Meme Database</h1>
   </div>
@@ -22,10 +22,10 @@
         </ul>
       </div>
       <div class="col-md-6 col-md-offset-1">  
-        <form class="form-group" ng-submit="addMeme()">
+        <form class="form-group">
           <input class="form-control" type="text" ng-model="formContent" placeholder="Enter meme URL here!"></input>
           <div class="text-right button-group">
-            <button class="btn btn-primary" type="submit">Add Meme</button>
+            <input class="btn btn-primary" type="button" ng-click="addMeme()" value="Add Meme">
             <button class="btn btn-danger" ng-click="removeAll()">Delete All</button>
           </div>
         </form>
