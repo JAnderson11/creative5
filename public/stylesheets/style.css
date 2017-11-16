@@ -8,6 +8,20 @@ a {
   color: #00B7FF;
 }
 
+.jumbotron {
+  background: #AD6AEA;
+  margin-bottom: 0;
+}
+
+.wrapper {
+  padding-top: 30px;
+  background: #EAAD6A;
+}
+
+.button-group {
+  margin-top: 10px;
+}
+
 img {
   width: 100%;
   padding: 10px;
@@ -19,4 +33,9 @@ img {
 
 .sidebar {
   height: 100%;
+}
+
+.memes {
+  overflow-y: scroll;
+  height: 66%;
 }
